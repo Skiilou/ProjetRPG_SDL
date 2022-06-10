@@ -4,7 +4,7 @@
 #include "../Vector2D.h"
 #include "../Game.h"
 #include "../TextureManager.h"
-
+// initialiser les composants et la position des element de la map
 class TileComponent : public Component
 {
 public:

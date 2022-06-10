@@ -33,7 +33,7 @@ using ComponentBitSet = std::bitset<maxComponents>;
 using GroupBitset = std::bitset<maxGroups>;
 
 using ComponentArray = std::array<Component*, maxComponents>;
-
+//class component pour appeler et mettre en place les différents composant
 class Component
 {
 public: 

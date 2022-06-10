@@ -3,7 +3,7 @@
 #include <SDL.h>
 #include "Components.h"
 #include "../TextureManager.h"
-
+//créé un png invisible pour les collisions
 class ColliderComponent : public Component
 {
 public:
@@ -37,13 +37,13 @@ public:
 		}
 
 		transform = &entity->getComponent<TransformComponent>();
-
+		//chargement de la texture de collisions
 		tex = TextureManager::LoadTexture("assets/murinvis.png");
 		srcR = { 0, 0, 64, 64 };
 		destR = { collider.x, collider.y, collider.w, collider.h };
 
 	}
-
+	//fonction update pour actualiser a chaque frame sla position des blocks
 	void update() override
 	{
 		if (tag != "terrain")

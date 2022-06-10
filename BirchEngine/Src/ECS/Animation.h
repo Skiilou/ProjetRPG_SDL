@@ -8,6 +8,7 @@ struct Animation
 	int speed;
 
 	Animation() {}
+	//affectation des variables pour les animations
 	Animation(int i, int f, int s)
 	{
 		index = i;

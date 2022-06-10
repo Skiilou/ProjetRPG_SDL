@@ -6,7 +6,7 @@
 #include "Animation.h"
 #include <map>
 #include "../AssetManager.h"
-
+//gerer les animation du personnages
 class SpriteComponent : public Component
 {
 private:
@@ -22,7 +22,7 @@ public:
 
 	int animIndex = 0;
 	std::map<const char*, Animation> animations;
-
+	//permet de retourner le sprite lors des animation
 	SDL_RendererFlip spriteFlip = SDL_FLIP_NONE;
 
 	SpriteComponent() = default;
@@ -49,7 +49,7 @@ public:
 	~SpriteComponent()
 	{
 	}
-
+	// permet de mettes les textures d'animation au personnages 
 	void setTex(std::string id)
 	{
 		texture = Game::assets->GetTexture(id);
@@ -64,7 +64,7 @@ public:
 		srcRect.w = transform->width;
 		srcRect.h = transform->height;
 	}
-
+	//fonction 
 	void update() override
 	{
 
