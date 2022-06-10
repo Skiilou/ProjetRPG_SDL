@@ -1,7 +1,7 @@
 #include "Game.h"
 
 Game *game = nullptr;
-
+// programe principal
 int main(int argc, char *argv[])
 {
 

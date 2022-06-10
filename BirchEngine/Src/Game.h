@@ -7,7 +7,7 @@
 
 class AssetManager;
 class ColliderComponent;
-
+//création de la classe game avec les differentes fonction utilisé dans Game.cpp
 class Game
 {
 public:

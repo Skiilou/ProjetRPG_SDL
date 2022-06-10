@@ -14,7 +14,7 @@ Map::Map(std::string tID, int ms, int ts) : texID(tID), mapScale(ms), tileSize(t
 Map::~Map()
 {
 }
-
+// permet de construire la map a partir du fichier txt donné
 void Map::LoadMap(std::string path, int sizeX, int sizeY)
 {
 	char c;

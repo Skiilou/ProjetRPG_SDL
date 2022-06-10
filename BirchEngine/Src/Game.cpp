@@ -27,7 +27,7 @@ Game::Game()
 
 Game::~Game()
 {}
-
+// initialisation de la fenetre de jeu 
 void Game::init(const char* title, int width, int height, bool fullscreen)
 {
 	int flags = 0;
@@ -53,7 +53,7 @@ void Game::init(const char* title, int width, int height, bool fullscreen)
 	{
 		std::cout << "Error : SDL_TTF" << std::endl;
 	}
-
+	//permet de charger les textures de la map ainsi que de celles du personnage
 	assets->AddTexture("terrain", "assets/map_tex2.png");
 	assets->AddTexture("player", "assets/amogus.png");
 	assets->AddTexture("projectile", "assets/proj.png");
@@ -64,7 +64,7 @@ void Game::init(const char* title, int width, int height, bool fullscreen)
 	//ecs implementation
 
 	map->LoadMap("assets/mapoui.map", 25, 20);
-
+	//permet d'ajouter tous les different composant au personnages 
 	player.addComponent<TransformComponent>(800.0f, 640.0f, 32 , 32, 2);
 	player.addComponent<SpriteComponent>("player", true);
 	player.addComponent<KeyboardController>();
@@ -81,12 +81,13 @@ void Game::init(const char* title, int width, int height, bool fullscreen)
 	assets->CreateProjectile(Vector2D(600, 600), Vector2D(2, -1), 200, 2, "projectile");
 
 }
-
+//permet d'associer les group créer aux element correspondant
 auto& tiles(manager.getGroup(Game::groupMap));
 auto& players(manager.getGroup(Game::groupPlayers));
 auto& colliders(manager.getGroup(Game::groupColliders));
 auto& projectiles(manager.getGroup(Game::groupProjectiles));
 
+// permet de quitter la fenetre si on appuie sur la croix 
 void Game::handleEvents()
 {
 	
@@ -106,7 +107,7 @@ void Game::handleEvents()
 
 void Game::update()
 {	
-
+	//SDL_RECT et vector pour la position et la collisoosn lié auc personnages 
 	SDL_Rect playerCol = player.getComponent<ColliderComponent>().collider;
 	Vector2D playerPos = player.getComponent<TransformComponent>().position;
 
@@ -117,7 +118,7 @@ void Game::update()
 	manager.refresh();
 	manager.update();
 
-	
+	// verifier si le personnages rentre en coliisions avec un objet
 	for (auto& c : colliders)
 	{
 		SDL_Rect cCol = c->getComponent<ColliderComponent>().collider;
@@ -135,7 +136,7 @@ void Game::update()
 			p->destroy();
 		}
 	}
-
+	//permet a la camera de se lock au personnages et de le suivre sur la map
 	camera.x = static_cast<int>(player.getComponent<TransformComponent>().position.x - 400);
 	camera.y = static_cast<int>(player.getComponent<TransformComponent>().position.y - 320);
 
@@ -148,7 +149,7 @@ void Game::update()
 	if (camera.y > camera.h)
 		camera.y = camera.h;
 }
-
+//permet d'afficher a l'ecran le personnages, la map et les blockes de collisions
 void Game::render()
 {
 	SDL_RenderClear(renderer);
@@ -176,7 +177,7 @@ void Game::render()
 
 	SDL_RenderPresent(renderer);
 }
-
+//clean pour detruire la fenetre et le render quand on a finit le debug
 void Game::clean()
 {
 	SDL_DestroyWindow(window);

@@ -1,6 +1,7 @@
 #include "Collision.h"
 #include "ECS\ColliderComponent.h"
-
+// création d'un booléen qui set a true si le personnage est en collisions avec les blocs de collisions de la map
+// methode AABB pour verifier les collisions, si les deux carrée a et b sont en collisions alors set a true;
 bool Collision::AABB(const SDL_Rect& recA, const SDL_Rect& recB)
 {
 	if (
