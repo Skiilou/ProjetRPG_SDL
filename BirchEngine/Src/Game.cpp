@@ -60,9 +60,11 @@ void Game::init(const char* title, int width, int height, bool fullscreen)
 
 	assets->AddFont("arial", "assets/arial.ttf", 16);
 
+	//
 	map = new Map("terrain", 1, 64);
 	//ecs implementation
 
+	//permet de definier la taille de la map
 	map->LoadMap("assets/mapoui.map", 25, 20);
 	//permet d'ajouter tous les different composant au personnages 
 	player.addComponent<TransformComponent>(800.0f, 640.0f, 32 , 32, 2);
