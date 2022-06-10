@@ -1,8 +1,8 @@
 #pragma once
-
+//création de la structure animation
 struct Animation
 {
-
+	//declaration des variables pour les animations du personnage
 	int index;
 	int frames;
 	int speed;
