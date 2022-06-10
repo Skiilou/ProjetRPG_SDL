@@ -72,8 +72,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>C:\Dev\SDL2_image-2.0.1\include;C:\Dev\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Dev\SDL2_image-2.0.1\lib\x86;C:\Dev\SDL2\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>./SDL2_image-2.0.1/include;./SDL2/include;$(IncludePath)</IncludePath>
+    <LibraryPath>./SDL2_image-2.0.1/lib/x86;./SDL2/lib/x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
@@ -97,10 +97,10 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>E:\Librairies_SDL\SDL2_ttf-2.0.18\include;C:\Dev\SDL2_image-2.0.1\include;C:\Dev\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./SDL2_ttf-2.0.18/include;./SDL2_image-2.0.1/include;./SDL2/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>E:\Librairies_SDL\SDL2_ttf-2.0.18\lib\x86;C:\Dev\SDL2_image-2.0.1\lib\x86;C:\Dev\BirchEngine\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>./SDL2_ttf-2.0.18/lib/x86;./SDL2_image-2.0.1/lib/x86;./SDL2/lib/x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Console</SubSystem>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
